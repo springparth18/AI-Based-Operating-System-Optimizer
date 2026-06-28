@@ -1,0 +1,274 @@
+
+<h2 class="sr-only">Step-by-step research guide for Behaviour-Adaptive Anomaly Detection in OS Telemetry</h2>
+
+<style>
+.rtopic { background: var(--bg-accent); border: 0.5px solid var(--border-accent); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+.rtopic-label { font-size: 11px; font-weight: 500; color: var(--text-accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+.rtopic-title { font-size: 16px; font-weight: 500; color: var(--text-primary); line-height: 1.4; }
+.rtopic-sub { font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
+
+.step-list { display: flex; flex-direction: column; gap: 10px; }
+.step-card { border: 0.5px solid var(--border); border-radius: 12px; background: var(--surface-2); overflow: hidden; cursor: pointer; transition: border-color .15s; }
+.step-card:hover { border-color: var(--border-strong); }
+.step-card.open { border-color: var(--border-accent); }
+.step-header { display: flex; align-items: center; gap: 12px; padding: 12px 14px; }
+.step-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; flex-shrink: 0; }
+.step-num.phase-a { background: var(--bg-accent); color: var(--text-accent); }
+.step-num.phase-b { background: var(--bg-success); color: var(--text-success); }
+.step-num.phase-c { background: var(--bg-warning); color: var(--text-warning); }
+.step-num.phase-d { background: var(--bg-pro); color: var(--text-pro); }
+.step-title { font-size: 14px; font-weight: 500; color: var(--text-primary); flex: 1; }
+.step-tag { font-size: 11px; padding: 2px 8px; border-radius: 99px; border: 0.5px solid var(--border); color: var(--text-muted); flex-shrink: 0; }
+.step-chevron { font-size: 16px; color: var(--text-muted); transition: transform .2s; flex-shrink: 0; }
+.step-card.open .step-chevron { transform: rotate(180deg); }
+.step-body { display: none; padding: 0 14px 14px 54px; }
+.step-card.open .step-body { display: block; }
+.step-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 10px; }
+.source-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 8px; margin-bottom: 10px; }
+.source-pill { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 8px; padding: 6px 10px; }
+.source-name { font-size: 12px; font-weight: 500; color: var(--text-primary); }
+.source-url { font-size: 11px; color: var(--text-accent); margin-top: 1px; }
+.queries-label { font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+.query-row { font-size: 12px; font-family: var(--font-mono); background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 6px; padding: 5px 9px; margin-bottom: 4px; color: var(--text-secondary); }
+.key-point { font-size: 12px; color: var(--text-primary); padding: 4px 0; display: flex; gap: 6px; }
+.key-point::before { content: "→"; color: var(--text-accent); flex-shrink: 0; }
+.phase-label { font-size: 11px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; padding: 6px 0 4px; }
+.gap-box { border-left: 2px solid var(--border-accent); padding: 8px 12px; margin: 8px 0; background: var(--surface-1); border-radius: 0 8px 8px 0; }
+.gap-box p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+</style>
+
+<div class="rtopic">
+  <div class="rtopic-label">Recommended research topic — final year B.Tech (CS)</div>
+  <div class="rtopic-title">Behaviour-Adaptive Anomaly Detection in Personal OS Telemetry Using Personalized User Baselines</div>
+  <div class="rtopic-sub">Why this is the right pick: it is the biggest innovation in your project, has a clear measurable gap in existing literature, is directly tied to your code, and produces quantifiable results for a paper.</div>
+</div>
+
+<div class="gap-box">
+  <p><strong style="color:var(--text-primary)">The research gap in one sentence:</strong> Every existing AIOps anomaly detection system uses generic, population-wide thresholds — none builds a personal behavioural baseline per individual user's OS usage pattern to reduce false positives.</p>
+</div>
+
+<div style="margin: 1rem 0 .5rem">
+  <div class="phase-label">Phase A — understand the field &nbsp; Steps 1–3</div>
+</div>
+
+<div class="step-list">
+
+<div class="step-card" onclick="toggle(this)">
+  <div class="step-header">
+    <div class="step-num phase-a">1</div>
+    <div class="step-title">Read the core survey papers</div>
+    <div class="step-tag">Week 1</div>
+    <i class="ti ti-chevron-down step-chevron" aria-hidden="true"></i>
+  </div>
+  <div class="step-body">
+    <p class="step-desc">Start with two comprehensive survey papers. Surveys give you the full landscape — all methods, their strengths, weaknesses, and open problems — in one document. Do not start writing code or your own paper until you have read at least one survey cover-to-cover.</p>
+    <div class="queries-label">Search queries to use</div>
+    <div class="query-row">"anomaly detection survey" "system telemetry" 2022 2023 2024</div>
+    <div class="query-row">"AIOps survey" "machine learning" "IT operations" 2023</div>
+    <div class="queries-label" style="margin-top:8px">Find these on</div>
+    <div class="source-grid">
+      <div class="source-pill"><div class="source-name">IEEE Xplore</div><div class="source-url">ieeexplore.ieee.org</div></div>
+      <div class="source-pill"><div class="source-name">ACM Digital Library</div><div class="source-url">dl.acm.org</div></div>
+      <div class="source-pill"><div class="source-name">arXiv</div><div class="source-url">arxiv.org/search</div></div>
+    </div>
+    <div class="queries-label" style="margin-top:8px">Specific papers to find</div>
+    <div class="key-point">"A Comprehensive Survey on Anomaly Detection in Time Series" — covers Isolation Forest, LOF, LSTM methods</div>
+    <div class="key-point">"AIOps: Survey and Emerging Topics" by Dang et al. — covers the full AIOps pipeline your project implements</div>
+    <div class="key-point">"Anomaly Detection for IT Operations" — find on arxiv.org/abs/2206.xxxxx using the title search</div>
+  </div>
+</div>
+
+<div class="step-card" onclick="toggle(this)">
+  <div class="step-header">
+    <div class="step-num phase-a">2</div>
+    <div class="step-title">Study the three core anomaly detection models</div>
+    <div class="step-tag">Week 1–2</div>
+    <i class="ti ti-chevron-down step-chevron" aria-hidden="true"></i>
+  </div>
+  <div class="step-body">
+    <p class="step-desc">Your project uses Isolation Forest, Local Outlier Factor, and One-Class SVM. You must read the original paper for each. This gives you the algorithmic understanding to explain them in your paper and to justify why you chose an ensemble over a single model.</p>
+    <div class="queries-label">Original papers — search by exact title</div>
+    <div class="query-row">"Isolation Forest" Liu Ting Zhou 2008 IEEE ICDM</div>
+    <div class="query-row">"LOF: Identifying Density-Based Local Outliers" Breunig 2000 ACM SIGMOD</div>
+    <div class="query-row">"Estimating the Support of a High-Dimensional Distribution" Schölkopf 2001 — One-Class SVM</div>
+    <div class="queries-label" style="margin-top:8px">Find these on</div>
+    <div class="source-grid">
+      <div class="source-pill"><div class="source-name">Google Scholar</div><div class="source-url">scholar.google.com</div></div>
+      <div class="source-pill"><div class="source-name">Semantic Scholar</div><div class="source-url">semanticscholar.org</div></div>
+      <div class="source-pill"><div class="source-name">ResearchGate</div><div class="source-url">researchgate.net</div></div>
+    </div>
+    <div class="key-point">For each model: write a 3-sentence summary of how it works, its time complexity, and one known weakness</div>
+    <div class="key-point">Find at least one paper that compares these three on the same dataset — your ensemble justification lives here</div>
+  </div>
+</div>
+
+<div class="step-card" onclick="toggle(this)">
+  <div class="step-header">
+    <div class="step-num phase-a">3</div>
+    <div class="step-title">Find papers on user behaviour modelling in computing</div>
+    <div class="step-tag">Week 2</div>
+    <i class="ti ti-chevron-down step-chevron" aria-hidden="true"></i>
+  </div>
+  <div class="step-body">
+    <p class="step-desc">This is where your research gap lives. You need to show that nobody has built a personal OS usage baseline before — or that they did it differently (e.g. for security intrusion detection, not performance optimisation). Search carefully. If you find a paper that does exactly what you are doing, your contribution becomes: doing it better, or combining it with something new.</p>
+    <div class="queries-label">Search queries</div>
+    <div class="query-row">"user behaviour baseline" "anomaly detection" "operating system"</div>
+    <div class="query-row">"personalized threshold" "CPU usage" "performance monitoring"</div>
+    <div class="query-row">"adaptive baseline" "system metrics" "user profile" 2020 2021 2022 2023</div>
+    <div class="query-row">"UEBA" "user entity behaviour analytics" "endpoint monitoring"</div>
+    <div class="queries-label" style="margin-top:8px">Find these on</div>
+    <div class="source-grid">
+      <div class="source-pill"><div class="source-name">Google Scholar</div><div class="source-url">scholar.google.com</div></div>
+      <div class="source-pill"><div class="source-name">Scopus</div><div class="source-url">scopus.com (via college VPN)</div></div>
+      <div class="source-pill"><div class="source-name">Web of Science</div><div class="source-url">webofscience.com</div></div>
+    </div>
+    <div class="key-point">UEBA papers are closest to your idea — but they focus on cybersecurity (intrusion), not performance. That is your gap.</div>
+    <div class="key-point">Note every paper that uses a generic threshold (e.g. CPU > 80% = anomaly). These become your "baseline to beat" in your experiments.</div>
+    <div class="key-point">Expected finding: you will find very few papers on personal OS performance baselines. That absence is your research contribution.</div>
+  </div>
+</div>
+
+<div style="margin: 1rem 0 .5rem">
+  <div class="phase-label">Phase B — define your contribution &nbsp; Steps 4–5</div>
+</div>
+
+<div class="step-card" onclick="toggle(this)">
+  <div class="step-header">
+    <div class="step-num phase-b">4</div>
+    <div class="step-title">Write your research gap and contribution statement</div>
+    <div class="step-tag">Week 3</div>
+    <i class="ti ti-chevron-down step-chevron" aria-hidden="true"></i>
+  </div>
+  <div class="step-body">
+    <p class="step-desc">Before touching your implementation further, write exactly three things on paper. This is the most important step — it defines the entire paper and keeps your implementation focused. Every design decision in your code should trace back to this statement.</p>
+    <div class="queries-label">Write these three things (draft, 1 paragraph each)</div>
+    <div class="key-point"><strong>The problem:</strong> "Existing OS monitoring tools apply generic, population-wide thresholds for anomaly detection, ignoring the fact that different users have fundamentally different usage patterns. A developer's 85% CPU during compilation is normal; the same value from an idle user indicates a problem."</div>
+    <div class="key-point"><strong>The gap:</strong> "No existing work builds a behaviour-adaptive, per-user baseline for OS performance telemetry that distinguishes personal usage patterns (GAMING, CODING, BROWSING, IDLE) and uses them as dynamic anomaly thresholds."</div>
+    <div class="key-point"><strong>Your contribution:</strong> "We propose a Behaviour Learning Engine that clusters OS telemetry by time-of-day and activity pattern to build a personal baseline per device, reducing false positives by X% compared to generic threshold approaches."</div>
+    <div class="queries-label" style="margin-top:8px">Tool to help structure this</div>
+    <div class="source-grid">
+      <div class="source-pill"><div class="source-name">Zotero</div><div class="source-url">zotero.org — free citation manager</div></div>
+      <div class="source-pill"><div class="source-name">Overleaf</div><div class="source-url">overleaf.com — LaTeX for paper writing</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="step-card" onclick="toggle(this)">
+  <div class="step-header">
+    <div class="step-num phase-b">5</div>
+    <div class="step-title">Read LLM-based RCA papers (supporting contribution)</div>
+    <div class="step-tag">Week 3–4</div>
+    <i class="ti ti-chevron-down step-chevron" aria-hidden="true"></i>
+  </div>
+  <div class="step-body">
+    <p class="step-desc">Your second contribution is using an LLM for root cause analysis at the OS level — not at the microservices/cloud level as in most existing work. Read these papers to understand the state of the art, then explain how your approach differs (OS-level, local LLM, personal context injected into prompt).</p>
+    <div class="queries-label">Search queries</div>
+    <div class="query-row">"LLM root cause analysis" AIOps 2023 2024</div>
+    <div class="query-row">"large language model" "incident diagnosis" "system performance"</div>
+    <div class="query-row">"RCAgent" OR "PACE" LLM "cloud incident" root cause</div>
+    <div class="queries-label" style="margin-top:8px">Specific papers to find</div>
+    <div class="key-point">"Exploring LLM-Based Agents for Root Cause Analysis" — Roy et al., ACM FSE 2024 (find on dl.acm.org)</div>
+    <div class="key-point">"AIOps for Reliability: Evaluating LLMs for Automated RCA in Chaos Engineering" — Springer 2025 (find on link.springer.com)</div>
+    <div class="key-point">"RCAgent: Cloud Root Cause Analysis by Autonomous Agents" — arxiv.org/abs/2310.16340</div>
+    <div class="key-point">Note: all these papers deal with cloud/microservices. Your gap is OS-level. State this explicitly in your Related Work section.</div>
+  </div>
+</div>
+
+<div style="margin: 1rem 0 .5rem">
+  <div class="phase-label">Phase C — build & measure &nbsp; Steps 6–7</div>
+</div>
+
+<div class="step-card" onclick="toggle(this)">
+  <div class="step-header">
+    <div class="step-num phase-c">6</div>
+    <div class="step-title">Design your experiment with two conditions to compare</div>
+    <div class="step-tag">Month 2–3</div>
+    <i class="ti ti-chevron-down step-chevron" aria-hidden="true"></i>
+  </div>
+  <div class="step-body">
+    <p class="step-desc">A research paper needs a comparison, not just a demo. You must run the same anomaly detection with (A) a generic threshold and (B) your personal behaviour baseline, then measure which produces fewer false positives and more true detections. This is your Table 1 or Figure 4 in the paper.</p>
+    <div class="queries-label">Experimental design</div>
+    <div class="key-point"><strong>Condition A (baseline):</strong> Generic threshold — CPU &gt; 80% = anomaly, RAM &gt; 85% = anomaly, regardless of user or time</div>
+    <div class="key-point"><strong>Condition B (your system):</strong> Personal behaviour baseline — flag only when deviation &gt; 2 standard deviations from the user's hourly mean for that activity pattern</div>
+    <div class="key-point"><strong>Collect data on 3–5 machines</strong> for at least 7 days each — one machine per distinct usage profile (developer, student, gamer, office user)</div>
+    <div class="key-point"><strong>Inject synthetic anomalies</strong> at known times (e.g. run a CPU stress test) so you have ground truth for precision/recall calculation</div>
+    <div class="queries-label" style="margin-top:8px">Metrics to report in the paper</div>
+    <div class="source-grid">
+      <div class="source-pill"><div class="source-name">Precision</div><div class="source-url">TP / (TP + FP)</div></div>
+      <div class="source-pill"><div class="source-name">Recall</div><div class="source-url">TP / (TP + FN)</div></div>
+      <div class="source-pill"><div class="source-name">F1 Score</div><div class="source-url">harmonic mean of P and R</div></div>
+      <div class="source-pill"><div class="source-name">False positive rate</div><div class="source-url">FP / (FP + TN)</div></div>
+    </div>
+    <div class="key-point">Expected result: your personal baseline should reduce false positives by 30–60% compared to generic thresholds for mixed-use machines</div>
+  </div>
+</div>
+
+<div class="step-card" onclick="toggle(this)">
+  <div class="step-header">
+    <div class="step-num phase-c">7</div>
+    <div class="step-title">Find the right conference to target for submission</div>
+    <div class="step-tag">Month 3</div>
+    <i class="ti ti-chevron-down step-chevron" aria-hidden="true"></i>
+  </div>
+  <div class="step-body">
+    <p class="step-desc">You need a Scopus-indexed conference that accepts applied systems papers — not purely theoretical ML venues. These are realistic targets for a final year project with working implementation and experimental results.</p>
+    <div class="queries-label">Primary target conferences</div>
+    <div class="key-point"><strong>ICDCS</strong> — IEEE International Conference on Distributed Computing Systems (ieeexplore.ieee.org) — highest value, very competitive</div>
+    <div class="key-point"><strong>ICSOC</strong> — International Conference on Service-Oriented Computing — regularly accepts AIOps papers</div>
+    <div class="key-point"><strong>IC2E</strong> — IEEE International Conference on Cloud Engineering — good fit for OS and systems papers</div>
+    <div class="key-point"><strong>CCEM / ICCCA</strong> — IEEE International Conference on Cloud Computing in Emerging Markets — more accessible, Scopus indexed</div>
+    <div class="queries-label" style="margin-top:8px">Verify Scopus indexing before submitting</div>
+    <div class="source-grid">
+      <div class="source-pill"><div class="source-name">Scopus source list</div><div class="source-url">scopus.com/sources</div></div>
+      <div class="source-pill"><div class="source-name">CORE Rankings</div><div class="source-url">core.edu.au/conference-portal</div></div>
+      <div class="source-pill"><div class="source-name">CFP deadlines</div><div class="source-url">wikicfp.com</div></div>
+    </div>
+    <div class="key-point">Search wikicfp.com for: "AIOps" OR "anomaly detection" OR "operating system" — filter by deadline and country</div>
+  </div>
+</div>
+
+<div style="margin: 1rem 0 .5rem">
+  <div class="phase-label">Phase D — write the paper &nbsp; Step 8</div>
+</div>
+
+<div class="step-card" onclick="toggle(this)">
+  <div class="step-header">
+    <div class="step-num phase-d">8</div>
+    <div class="step-title">Write the paper in this exact section order</div>
+    <div class="step-tag">Month 4–5</div>
+    <i class="ti ti-chevron-down step-chevron" aria-hidden="true"></i>
+  </div>
+  <div class="step-body">
+    <p class="step-desc">Counter-intuitively, do not write your paper from Section 1 to the end. Write in this order — each section builds on the one before, and your experiments give you the numbers that make the abstract and introduction credible.</p>
+    <div class="queries-label">Writing order (not the reading order)</div>
+    <div class="key-point"><strong>1st — Methodology (Section 4):</strong> Describe your Behaviour Learning Engine, ensemble model, and personal baseline algorithm. Write it while the code is fresh.</div>
+    <div class="key-point"><strong>2nd — Experiments (Section 5):</strong> Run your A vs B comparison, collect numbers, build your tables and figures. These are the core of the paper.</div>
+    <div class="key-point"><strong>3rd — Related Work (Section 2):</strong> Now that you know what you did, map it against the literature you collected in Steps 1–3. Be specific: "Unlike [Liu et al., 2008], our approach adapts the contamination parameter per user."</div>
+    <div class="key-point"><strong>4th — Introduction (Section 1):</strong> Write this last among the body sections. Use your experimental numbers here: "Our system reduced false positives by 47% compared to generic threshold detection."</div>
+    <div class="key-point"><strong>5th — Abstract (150 words max):</strong> Written last. One sentence each: problem, gap, method, key result, claim.</div>
+    <div class="queries-label" style="margin-top:8px">Tools and resources for writing</div>
+    <div class="source-grid">
+      <div class="source-pill"><div class="source-name">Overleaf</div><div class="source-url">overleaf.com — LaTeX online</div></div>
+      <div class="source-pill"><div class="source-name">IEEE template</div><div class="source-url">ieeetemplates.org</div></div>
+      <div class="source-pill"><div class="source-name">Zotero</div><div class="source-url">zotero.org — citations</div></div>
+      <div class="source-pill"><div class="source-name">Connected Papers</div><div class="source-url">connectedpapers.com</div></div>
+    </div>
+    <div class="key-point">Use connectedpapers.com — paste in one core paper and it draws a visual graph of all related work. Essential for finding references you missed.</div>
+  </div>
+</div>
+
+</div>
+
+<div style="border-top: 0.5px solid var(--border); margin-top: 1.5rem; padding-top: 1rem; display: flex; gap: 8px; flex-wrap: wrap;">
+  <button onclick="sendPrompt('How do I write the Related Work section for this research topic? What papers should I cite?')" style="font-size:13px">How to write related work ↗</button>
+  <button onclick="sendPrompt('What exact search query should I use on Google Scholar to find papers about personalized anomaly detection baselines for OS telemetry?')" style="font-size:13px">Sharpen my search query ↗</button>
+  <button onclick="sendPrompt('How do I inject synthetic anomalies into my OS telemetry data for the experiment in Step 6?')" style="font-size:13px">How to inject test anomalies ↗</button>
+</div>
+
+<script>
+function toggle(card) {
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.step-card.open').forEach(c => c.classList.remove('open'));
+  if (!isOpen) card.classList.add('open');
+}
+</script>
